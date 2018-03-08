@@ -1,0 +1,9 @@
+<launch>
+
+<!-- <node name="static_transform_puisher" pkg="tf" type="static_transform_publisher" args="0.15 0 -0.1 0 1.57 0 base_link base_scan 50"/> -->
+<node name="clock_publisher" pkg="vrep_ros_clock_server" type="vrep_ros_clock_server_node"/>
+<node name="static_transform_puisher" pkg="tf" type="static_transform_publisher" args="0 -0.15 0.1 -1.57 0 0 base_link base_scan 50"/>
+<node name="vrep_simulation" pkg="ackermann_robot" type="simulation" output="screen"/>
+<node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"  />
+
+</launch>
